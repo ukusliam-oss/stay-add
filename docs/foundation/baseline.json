@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "captured_on": "2026-10-31",
+  "source_commit": "44661fd0b2b70db7a9fc0bfec93080ec9ceb6b65",
+  "public_url": "https://ukusliam-oss.github.io/stay-add/",
+  "repository": "https://github.com/ukusliam-oss/stay-add",
+  "technical_verification": {
+    "command": "npm run check",
+    "tests_passed": 11,
+    "tests_failed": 0,
+    "evidence": "Executed during P0 baseline audit",
+    "ci_run": "https://github.com/ukusliam-oss/stay-add/actions/runs/41210874032",
+    "ci_conclusion": "success",
+    "ci_source_commit": "44661fd0b2b70db7a9fc0bfec93080ec9ceb6b65"
+  },
+  "inventory": {
+    "subject_ids": [
+      "chemistry",
+      "biology",
+      "physics",
+      "mathematics"
+    ],
+    "concept_previews": 4,
+    "lab_demos": 1,
+    "practice_questions": 1,
+    "connection_themes": 3,
+    "connection_views": 12,
+    "search_entries": 9,
+    "documented_independent_academic_reviews": 0,
+    "full_syllabus_mapping": "not_implemented",
+    "formal_lesson_routes": "not_implemented",
+    "accounts_and_progress": "not_implemented",
+    "content_status": "Draft"
+  },
+  "public_checks": [
+    {
+      "asset": "index.html",
+      "status": 200,
+      "matches_baseline": true
+    },
+    {
+      "asset": "app.js",
+      "status": 200,
+      "matches_baseline": true
+    },
+    {
+      "asset": "content.js",
+      "status": 200,
+      "matches_baseline": true
+    },
+    {
+      "asset": "model.js",
+      "status": 200,
+      "matches_baseline": true
+    },
+    {
+      "asset": "icons.js",
+      "status": 200,
+      "matches_baseline": true
+    },
+    {
+      "asset": "style.css",
+      "status": 200,
+      "matches_baseline": true
+    }
+  ],
+  "runtime_files": [
+    {
+      "path": "dist/.nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 17531,
+      "sha256": "9757fbf509ba6ad9db11f1178f49d2748c6b3cbc1927eccda783966ae01b0b26"
+    },
+    {
+      "path": "dist/assets/IBM-Plex-Mono-OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "dist/assets/Space-Grotesk-OFL.txt",
+      "bytes": 4495,
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72"
+    },
+    {
+      "path": "dist/assets/favicon.svg",
+      "bytes": 230,
+      "sha256": "452b07764797394e8685f6b09564e0e5a91607890af4f352a529403d41141a2b"
+    },
+    {
+      "path": "dist/assets/ibm-plex-mono.woff2",
+      "bytes": 10052,
+      "sha256": "c36f509c0a8f9f85f29cb44bc8701d8a9e0b14c499e77a884f789ead7093a7ac"
+    },
+    {
+      "path": "dist/assets/space-grotesk.woff2",
+      "bytes": 22320,
+      "sha256": "a0d054c4af557de20afd6ca59f47ab353bcaec49c63ff04b6c9d39d0f8910557"
+    },
+    {
+      "path": "dist/content.js",
+      "bytes": 10127,
+      "sha256": "76a5c0eabf93fb1de9f5fed95b8a0973bdd3310218acd6d32ab83332202948ce"
+    },
+    {
+      "path": "dist/icons.js",
+      "bytes": 514,
+      "sha256": "beb0cbf5f3bc1cb2cfe29c169460a254e9d7d88f76d727487a96d08f283e9ba0"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 30141,
+      "sha256": "3f55a21b369b6670f1e82d47ffe25a906592bcf7c0b8bf2bcbe3cd4c2fd9c2ef"
+    },
+    {
+      "path": "dist/model.js",
+      "bytes": 1772,
+      "sha256": "f56fed2f81978df6fabc9bd40d06479f4ef43b228aca5a292ae7c697716dc9b4"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 43389,
+      "sha256": "1d56e177e8767d482d6c0d3893fb0a4c07ef639a7a1b5452f54407d746f826ec"
+    }
+  ],
+  "local_screenshots": [
+    {
+      "path": "artifacts/desktop-1440.jpg",
+      "sha256": "31bd15158a1c293ee05c3b56e5efe53389efe3637a3c4da00feeee448edd0b68",
+      "availability": "local_only_gitignored"
+    },
+    {
+      "path": "artifacts/mobile-375.jpg",
+      "sha256": "4968e84e504a1d6f39d7effea9bc8558207c9ba2eff11e376c3189bda848babe",
+      "availability": "local_only_gitignored"
+    },
+    {
+      "path": "artifacts/mobile-svg-lab.jpg",
+      "sha256": "7da5126f9ab9009592f340b8d88c8c7d55996b2361484b717c3bcd0930f5c742",
+      "availability": "local_only_gitignored"
+    }
+  ],
+  "limitations": [
+    "technical checks are not independent academic review",
+    "viewport checks are not physical-device testing",
+    "no production field Core Web Vitals evidence",
+    "source files are fingerprinted; official syllabus PDFs are not archived by this record"
+  ]
+}

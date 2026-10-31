@@ -8,6 +8,8 @@
 
 제품 명세를 실현하기 위한 범위·선행 조건·단계별 통과 기준은 [단계별 실행 계획](docs/IMPLEMENTATION-PLAN.md)에 정리했습니다.
 
+1단계(P0)의 실제 조사·결정·출처·위험·통과 판정은 [기준 확정 실행 기록](docs/foundation/P0-FOUNDATION.md)에 있습니다. 현재 시험 기준·콘텐츠 언어·검토 책임은 사용자 선택/역할 지정 대기이며, G0를 통과한 상태가 아닙니다. `npm run foundation:check`는 기록 무결성을 검사하고, `npm run foundation:ready`는 미결정 항목이 있으면 실패합니다.
+
 ## GitHub Pages 배포
 
 `main`에 푸시하면 GitHub Actions가 Node.js 24에서 `npm ci --ignore-scripts`와 `npm run check`를 실행한 뒤 `dist/`만 GitHub Pages에 배포합니다. 수동 배포는 저장소 Actions의 `Verify and deploy GitHub Pages`에서 실행할 수 있습니다. 별도 배포 토큰이나 외부 서비스 키가 필요하지 않습니다.

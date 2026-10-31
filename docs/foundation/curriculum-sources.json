@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-31",
+  "status": "candidate_registry_not_adopted_curriculum",
+  "board": "Cambridge International Education",
+  "qualification": "Cambridge IGCSE",
+  "examination_year_rule": "The syllabus year refers to the year in which the examination is taken.",
+  "retrieval_note": "Official pages and PDF records were consulted. Some repeat PDF and canonical-page fetches timed out. No full PDF snapshot or checksum is claimed. Recheck selected files and update notices before P2 mapping.",
+  "sources": [
+    {
+      "id": "cie-0620-2026-2028",
+      "subject": "chemistry",
+      "code": "0620",
+      "valid_exam_years": [
+        2026,
+        2027,
+        2028
+      ],
+      "overview_url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-chemistry-0620/",
+      "syllabus_url": "https://www.cambridgeinternational.org/Images/697205-2026-2028-syllabus.pdf",
+      "update_url": "https://www.cambridgeinternational.org/Images/763304-2026-2028-syllabus-update.pdf",
+      "document_version": null,
+      "version_status": "not_confirmed_due_to_pdf_fetch_timeout",
+      "evidence": "Official Chemistry page lists the 2026-2028 syllabus and update. Update PDF identity and one-page extent were retrieved; no interpretation of the update is claimed.",
+      "entry_classification": "Core or Extended; selection pending",
+      "adoption": "candidate",
+      "grading_scale": "A*-G"
+    },
+    {
+      "id": "cie-0610-2026-2028",
+      "subject": "biology",
+      "code": "0610",
+      "valid_exam_years": [
+        2026,
+        2027,
+        2028
+      ],
+      "overview_url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-biology-0610/",
+      "syllabus_url": "https://www.cambridgeinternational.org/Images/697203-2026-2028-syllabus.pdf",
+      "update_url": "https://www.cambridgeinternational.org/Images/748912-2026-2028-syllabus-update.pdf",
+      "document_version": 3,
+      "version_status": "cover_version_observed",
+      "evidence": "PDF cover identifies Version 3, Biology 0610 and examinations 2026, 2027, 2028. Assessment overview distinguishes Core and Extended; Extended includes Core and Supplement.",
+      "entry_classification": "Core or Extended; selection pending",
+      "adoption": "candidate",
+      "grading_scale": "A*-G"
+    },
+    {
+      "id": "cie-0625-2026-2028",
+      "subject": "physics",
+      "code": "0625",
+      "valid_exam_years": [
+        2026,
+        2027,
+        2028
+      ],
+      "overview_url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-physics-0625/",
+      "syllabus_url": "https://www.cambridgeinternational.org/Images/697209-2026-2028-syllabus.pdf",
+      "update_url": "https://www.cambridgeinternational.org/Images/748914-2026-2028-syllabus-update.pdf",
+      "document_version": 2,
+      "version_status": "cover_version_observed",
+      "evidence": "PDF cover identifies Version 2, Physics 0625 and examinations 2026, 2027, 2028. Its change notice identifies the version as published December 2025.",
+      "entry_classification": "Core or Extended; selection pending",
+      "adoption": "candidate",
+      "grading_scale": "A*-G"
+    },
+    {
+      "id": "cie-0606-2025-2027",
+      "subject": "mathematics",
+      "code": "0606",
+      "valid_exam_years": [
+        2025,
+        2026,
+        2027
+      ],
+      "overview_url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-additional-0606/",
+      "syllabus_url": "https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf",
+      "update_url": "https://www.cambridgeinternational.org/Images/709707-2025-2027-syllabus-update.pdf",
+      "document_version": 1,
+      "version_status": "cover_version_observed",
+      "evidence": "PDF cover identifies Version 1, Additional Mathematics 0606 and examinations 2025, 2026, 2027. This is a distinct syllabus from the 2028-2030 edition.",
+      "entry_classification": "Additional Mathematics; do not inherit the science Core/Extended selection",
+      "adoption": "candidate",
+      "grading_scale": "A*-E"
+    },
+    {
+      "id": "cie-0606-2028-2030",
+      "subject": "mathematics",
+      "code": "0606",
+      "valid_exam_years": [
+        2028,
+        2029,
+        2030
+      ],
+      "overview_url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-additional-0606/",
+      "syllabus_url": "https://www.cambridgeinternational.org/Images/745683-2028-2030-syllabus.pdf",
+      "update_url": null,
+      "document_version": 1,
+      "version_status": "cover_version_observed",
+      "evidence": "PDF cover identifies Version 1 and examinations 2028, 2029, 2030. The document identifies publication in September 2025. No separate update PDF was listed in the consulted 0606 overview for this edition.",
+      "entry_classification": "Additional Mathematics; do not inherit the science Core/Extended selection",
+      "adoption": "candidate",
+      "grading_scale": "A*-E"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "cambridge-igcse-2027-extended",
+      "status": "candidate",
+      "exam_year": 2027,
+      "science_entry": "Extended",
+      "source_ids": [
+        "cie-0620-2026-2028",
+        "cie-0610-2026-2028",
+        "cie-0625-2026-2028",
+        "cie-0606-2025-2027"
+      ],
+      "practical_component_policy": "Support experimental reasoning; no examination component choice or hands-on competency claim is inferred.",
+      "grading_by_subject": {
+        "chemistry": "A*-G",
+        "biology": "A*-G",
+        "physics": "A*-G",
+        "mathematics": "A*-E"
+      }
+    },
+    {
+      "id": "cambridge-igcse-2028-extended",
+      "status": "candidate",
+      "exam_year": 2028,
+      "science_entry": "Extended",
+      "source_ids": [
+        "cie-0620-2026-2028",
+        "cie-0610-2026-2028",
+        "cie-0625-2026-2028",
+        "cie-0606-2028-2030"
+      ],
+      "practical_component_policy": "Support experimental reasoning; no examination component choice or hands-on competency claim is inferred.",
+      "grading_by_subject": {
+        "chemistry": "A*-G",
+        "biology": "A*-G",
+        "physics": "A*-G",
+        "mathematics": "A*-E"
+      }
+    },
+    {
+      "id": "general-exploration",
+      "status": "candidate",
+      "exam_year": null,
+      "science_entry": null,
+      "source_ids": [],
+      "practical_component_policy": "No exam-alignment claim; IGCSE profiles remain optional future mappings.",
+      "grading_by_subject": {}
+    }
+  ]
+}

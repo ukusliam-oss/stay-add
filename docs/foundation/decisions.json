@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "stage": "P0",
+  "checked_on": "2026-10-31",
+  "status": "awaiting_user_input",
+  "scope": {
+    "status": "working_scope",
+    "authority": "docs/IMPLEMENTATION-PLAN.md P5; user requested execution of step 1",
+    "subjects": ["chemistry", "biology", "physics", "mathematics"],
+    "beta_totals": {"lessons": 12, "labs": 4, "questions": 32, "connection_themes": 3, "connection_views": 12},
+    "counts_are": "planned_release_scope_not_completed_content",
+    "first_vertical_slice": "chemistry-reaction-rates",
+    "exclusions": ["full-syllabus-coverage-claim", "official-score-prediction", "accounts", "cross-device-sync", "large-knowledge-graph", "unlicensed-official-question-reproduction"]
+  },
+  "decisions": [
+    {
+      "id": "D-01",
+      "title": "Exam board, examination year and entry route",
+      "status": "awaiting_user_input",
+      "selected_profile": null,
+      "candidate_profiles": ["cambridge-igcse-2027-extended", "cambridge-igcse-2028-extended", "general-exploration"],
+      "evidence": "Original brief specifies IGCSE, but no board, examination year or entry route was selected.",
+      "blocks": ["syllabus-mapping", "formal-CORE-labelling", "exam-aligned-content"]
+    },
+    {
+      "id": "D-02",
+      "title": "Audience, language and bounded release scope",
+      "status": "awaiting_user_input",
+      "audience": "secondary learners studying the four subjects; exact examination profile pending D-01",
+      "content_language": null,
+      "candidate_languages": ["en-ko-later", "en-ko", "ko-with-en-terms"],
+      "existing_ui_language": "en",
+      "scope_reference": "scope",
+      "evidence": "Existing prototype is English. The user's Korean conversation is not treated as a decision to translate all teaching content.",
+      "blocks": ["formal-lesson-authoring-language", "localisation-scope"]
+    },
+    {
+      "id": "D-03",
+      "title": "Academic, model and rights review ownership",
+      "status": "awaiting_assignment",
+      "required_roles": ["chemistry-review", "biology-review", "physics-review", "mathematics-review", "model-review", "rights-review"],
+      "unreviewed_content_policy": "Draft; no Verified or syllabus-verified teaching claim",
+      "evidence": "No independent academic or model reviewer has been assigned in the conversation or repository.",
+      "blocks": ["G0-full-pass", "independently-verified-content-release"]
+    },
+    {
+      "id": "D-04",
+      "title": "Static-first architecture and hosting constraints",
+      "status": "confirmed",
+      "hosting": "github-pages",
+      "public_url": "https://ukusliam-oss.github.io/stay-add/",
+      "repository": "https://github.com/ukusliam-oss/stay-add",
+      "runtime_now": "buildless HTML/CSS/native ES modules",
+      "next_framework": "Astro + TypeScript candidate; adoption requires the P1 proof of concept",
+      "constraints": ["static-output", "project-subpath-compatible", "no-client-secrets", "no-required-login", "preserve-brand-and-existing-demo"],
+      "evidence": "User explicitly requested public GitHub deployment; current successful Pages workflow deploys dist/."
+    },
+    {
+      "id": "D-05",
+      "title": "Publication, status and scope communication",
+      "status": "confirmed",
+      "content_states": ["Draft", "In Review", "Verified", "Published", "Revision Required"],
+      "rules": [
+        "Documented technical checks do not establish independent academic verification.",
+        "Published UI does not imply Published teaching content.",
+        "Product depth CORE/DEEP/BEYOND and exam-board content/entry classifications are separate fields.",
+        "A mathematically consistent illustrative model is not described as empirically fitted.",
+        "Board/year coverage is not claimed before a selected official objective set is mapped and reviewed."
+      ],
+      "evidence": "User requested honest implementation scope; the master specification and current scope dialog require draft/model limitations."
+    }
+  ],
+  "roles": [
+    {"id": "product-owner", "assignment": "project-owner", "status": "established_by_task", "responsibility": "Choose product scope, examination profile, content language and release intent."},
+    {"id": "engineering", "assignment": "Codex", "status": "assigned", "responsibility": "Implementation, technical checks, deployment and evidence collection; not independent academic certification."},
+    {"id": "chemistry-review", "assignment": null, "status": "unassigned", "responsibility": "Chemistry accuracy, syllabus mapping and explanation review."},
+    {"id": "biology-review", "assignment": null, "status": "unassigned", "responsibility": "Biology accuracy, syllabus mapping and explanation review."},
+    {"id": "physics-review", "assignment": null, "status": "unassigned", "responsibility": "Physics accuracy, syllabus mapping and explanation review."},
+    {"id": "mathematics-review", "assignment": null, "status": "unassigned", "responsibility": "Mathematical derivations, notation, units and syllabus mapping review."},
+    {"id": "model-review", "assignment": null, "status": "unassigned", "responsibility": "Independent formula, assumptions, boundary values and numerical reference checks."},
+    {"id": "rights-review", "assignment": null, "status": "unassigned", "responsibility": "Check source permissions and rights for material actually included in releases."}
+  ],
+  "gate": {
+    "id": "G0",
+    "status": "not_ready",
+    "pending_decisions": ["D-01", "D-02", "D-03"],
+    "allowed_while_pending": ["baseline-audit", "candidate-source-registration", "risk-and-decision-recording", "isolated-technical-experiments-unrelated-to-unknown-decisions"],
+    "not_authorised_by_this_record": ["claim-G0-passed", "select-an-unanswered-option", "claim-independent-review", "publish-new-syllabus-verified-lessons"]
+  }
+}
