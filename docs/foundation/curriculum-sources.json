@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "checked_on": "2026-10-31",
-  "status": "candidate_registry_not_adopted_curriculum",
+  "status": "source_catalog_with_selection_in_decisions_json",
   "board": "Cambridge International Education",
   "qualification": "Cambridge IGCSE",
   "examination_year_rule": "The syllabus year refers to the year in which the examination is taken.",
@@ -151,5 +151,6 @@
       "practical_component_policy": "No exam-alignment claim; IGCSE profiles remain optional future mappings.",
       "grading_by_subject": {}
     }
-  ]
+  ],
+  "selection_record": "decisions.json / D-01"
 }

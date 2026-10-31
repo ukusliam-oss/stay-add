@@ -8,7 +8,7 @@
 
 제품 명세를 실현하기 위한 범위·선행 조건·단계별 통과 기준은 [단계별 실행 계획](docs/IMPLEMENTATION-PLAN.md)에 정리했습니다.
 
-1단계(P0)의 실제 조사·결정·출처·위험·통과 판정은 [기준 확정 실행 기록](docs/foundation/P0-FOUNDATION.md)에 있습니다. 현재 시험 기준·콘텐츠 언어·검토 책임은 사용자 선택/역할 지정 대기이며, G0를 통과한 상태가 아닙니다. `npm run foundation:check`는 기록 무결성을 검사하고, `npm run foundation:ready`는 미결정 항목이 있으면 실패합니다.
+1단계(P0)의 실제 조사·결정·출처·위험·통과 판정은 [기준 확정 실행 기록](docs/foundation/P0-FOUNDATION.md)에 있습니다. 시험 기준은 Cambridge IGCSE 2028년 과학 Extended로 확정됐습니다. 콘텐츠 언어·검토 책임은 선택/역할 지정 대기이며 G0는 아직 미통과입니다. `npm run foundation:check`는 기록 무결성을 검사하고, `npm run foundation:ready`는 미결정 항목이 있으면 실패합니다.
 
 ## GitHub Pages 배포
 

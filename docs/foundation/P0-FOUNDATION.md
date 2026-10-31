@@ -2,7 +2,7 @@
 
 기준일: 2026-10-31 · 상태: 독립적으로 수행 가능한 조사·기록 완료, 사용자 선택 및 검토 역할 지정 대기.
 
-**G0를 통과했다고 표시하지 않는다.** 실행 계획의 첫 단계는 기준 확정이며, 아직 답변이 없는 시험 기준·학습 언어·검토 책임을 임의로 채우지 않았다. 다음 정식 콘텐츠 제작 단계로 넘어갔다고 주장하지 않는다.
+**G0를 통과했다고 표시하지 않는다.** 시험 기준은 사용자 답변으로 확정했고, 아직 답변이 없는 학습 언어·검토 책임은 임의로 채우지 않았다. 다음 정식 콘텐츠 제작 단계로 넘어갔다고 주장하지 않는다.
 
 ## 1. 실제로 수행한 일
 
@@ -25,13 +25,15 @@
 
 ## 3. 결정 기록
 
-### D-01 시험 기준 — 사용자 선택 대기
+### D-01 시험 기준 — 사용자 답변으로 확정
+
+사용자는 2026-10-31 질문에 **Cambridge IGCSE · 2028년 시험 · 과학 Extended**를 선택했다. 이에 따라 채택한 프로필은 `cambridge-igcse-2028-extended`다. Chemistry 0620·Biology 0610·Physics 0625는 2026–2028 판본, Additional Mathematics 0606은 2028–2030 판본을 참조한다. 과학의 Extended와 수학의 별도 분류를 구분한다. 다음 문단의 후보 목록은 선택 과정의 기록이다.
 
 기존 요구에서 확정된 것은 IGCSE 중심의 Chemistry, Biology, Physics, Additional Mathematics다. 시험위원회, 실제 시험 연도, 응시 경로는 정해지지 않았다.
 
 선택 가능하도록 준비한 후보는 Cambridge IGCSE 2027년 과학 Extended, Cambridge IGCSE 2028년 과학 Extended, 그리고 시험 대응을 주장하지 않는 범용 탐구 프로필이다. 다른 기준은 사용자 답변에 따라 등록할 수 있다. Additional Mathematics에 과학 과목의 Core/Extended 분류를 복사하지 않는다.
 
-2027 프로필의 수학 후보는 2025–2027 판본이고, 2028 프로필의 수학 후보는 2028–2030 판본이다. 세 과학 과목은 두 프로필에서 모두 2026–2028 적용 판본을 참조한다. 프로필은 조사 후보이며 현재 채택한 시험 기준이 아니다. [Biology 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-biology-0610/), [Physics 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-physics-0625/), [Additional Mathematics 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-additional-0606/)
+2027 프로필의 수학 후보는 2025–2027 판본이고, 2028 프로필의 수학 후보는 2028–2030 판본이다. 세 과학 과목은 두 프로필에서 모두 2026–2028 적용 판본을 참조한다. 모든 후보를 동시에 채택한 것은 아니며, 위 사용자 답변의 2028 프로필만 선택 결과다. [Biology 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-biology-0610/), [Physics 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-physics-0625/), [Additional Mathematics 공식 자료](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-additional-0606/)
 
 등급도 과목별로 기록한다. 과학 후보의 A*–G 체계를 Additional Mathematics에 일괄 복사하지 않는다. 0606은 A*–E이며, 시험 경로와 계산기 사용 정책 역시 과목별로 확인해야 한다. [0606 평가 안내](https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf)
 
@@ -65,7 +67,7 @@ GitHub 공개 저장소와 GitHub Pages 정적 배포를 유지한다. 현재 HT
 
 통과한 준비 항목은 기준선 확보, 현재 기능 분류, 제한 베타 작업 범위 기록, 정적 배포 제약, 공개 상태 정책, 후보 출처 식별, 위험 등록이다.
 
-아직 충족되지 않은 항목은 D-01 시험 기준, D-02 언어, D-03 검토 책임이다. 따라서 현재 G0 상태는 `not_ready`다.
+아직 충족되지 않은 항목은 D-02 언어, D-03 검토 책임이다. D-01은 사용자 답변으로 확정됐다. 현재 G0 상태는 `not_ready`다.
 
 검증 명령은 다음과 같다.
 
