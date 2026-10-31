@@ -1,5 +1,6 @@
 import { defaults, sample, series, csv } from './model.js';
 import { subjects, connections, searchIndex } from './content.js';
+import { icon } from './icons.js';
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -47,7 +48,7 @@ matchMedia('(min-width: 601px)').addEventListener('change',closeMenu);
 function openSubject(id, trigger) {
   const s=subjects[id];
   $('#lesson-content').className=id;
-  $('#lesson-content').innerHTML=`<p class="lesson-topline mono">${s.number} / ${s.name.toUpperCase()} · ORIGINAL CONCEPT PREVIEW</p><h2 id="lesson-title">${s.title}</h2><p class="lesson-question">${s.question}</p><p class="lesson-definition">${s.definition}</p><div class="lesson-formula">${s.formula}<small>${s.units}</small></div><details class="lesson-deeper"><summary>A closer look +</summary><p>${s.deeper}</p></details><div class="lesson-footer"><a class="button" href="${s.target}" data-lesson-action>${s.action} ↗</a><a class="text-link" href="${s.source}" target="_blank" rel="noopener noreferrer">${s.sourceName} ↗</a></div><p class="lesson-status mono">DRAFT PREVIEW · NO EXAM-BOARD OR YEAR MAPPING · NOT A FULL LESSON</p>`;
+  $('#lesson-content').innerHTML=`<p class="lesson-topline mono">${s.number} / ${s.name.toUpperCase()} · ORIGINAL CONCEPT PREVIEW</p><h2 id="lesson-title">${s.title}</h2><p class="lesson-question">${s.question}</p><p class="lesson-definition">${s.definition}</p><div class="lesson-formula">${s.formula}<small>${s.units}</small></div><details class="lesson-deeper"><summary>A closer look +</summary><p>${s.deeper}</p></details><div class="lesson-footer"><a class="button" href="${s.target}" data-lesson-action>${s.action} ${icon('arrow-up-right')}</a><a class="text-link" href="${s.source}" target="_blank" rel="noopener noreferrer">${s.sourceName} ${icon('arrow-up-right')}</a></div><p class="lesson-status mono">DRAFT PREVIEW · NO EXAM-BOARD OR YEAR MAPPING · NOT A FULL LESSON</p>`;
   $('#lesson-content [data-lesson-action]').addEventListener('click',()=>{setConnection(s.related);closeDialog($('#subject-dialog'));});
   openDialog($('#subject-dialog'),trigger);
 }
@@ -59,7 +60,7 @@ function renderSearch(query) {
   const list=$('#search-results');list.replaceChildren();
   matches.forEach(item=>{
     const li=document.createElement('li'), button=document.createElement('button'), span=document.createElement('span'), small=document.createElement('small'), arrow=document.createElement('span');
-    button.type='button';small.textContent=item.kind;span.append(small,document.createTextNode(item.title));arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(span,arrow);li.append(button);list.append(li);
+    button.type='button';small.textContent=item.kind;span.append(small,document.createTextNode(item.title));arrow.innerHTML=icon('arrow-up-right');arrow.setAttribute('aria-hidden','true');button.append(span,arrow);li.append(button);list.append(li);
     button.addEventListener('click',()=>{
       closeDialog($('#search-dialog'));
       // Wait for native focus restoration before opening a second modal.
@@ -81,7 +82,7 @@ function setConnection(id) {
 function renderConnection(){
   const c=connections[currentConnection][currentDiscipline], s=subjects[currentDiscipline];
   $$('[data-discipline]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.discipline===currentDiscipline)));
-  $('#connection-detail').innerHTML=`<p class="eyebrow mono">${s.number} / ${s.name.toUpperCase()}</p><h3>${c.title}</h3><p class="connection-equation">${c.equation}</p><p>${c.text}</p><p class="connection-note">${c.note}</p><a class="text-link" href="${c.link}">${c.action} ↗</a>`;
+  $('#connection-detail').innerHTML=`<p class="eyebrow mono">${s.number} / ${s.name.toUpperCase()}</p><h3>${c.title}</h3><p class="connection-equation">${c.equation}</p><p>${c.text}</p><p class="connection-note">${c.note}</p><a class="text-link" href="${c.link}">${c.action} ${icon('arrow-up-right')}</a>`;
   if(c.subject) $('#connection-detail a').addEventListener('click',event=>{event.preventDefault();openSubject(c.subject,event.currentTarget);});
 }
 $$('[data-connection]').forEach(button=>button.addEventListener('click',()=>setConnection(button.dataset.connection)));
@@ -127,7 +128,7 @@ function drawGraph(){
   refreshLab();
 }
 function setRunning(next,status){
-  running=next;labLast=performance.now();runButton.innerHTML=`${running?'Pause experiment':modelTime>0?'Resume experiment':'Run experiment'} <span aria-hidden="true">${running?'Ⅱ':'↗'}</span>`;
+  running=next;labLast=performance.now();runButton.innerHTML=`${running?'Pause experiment':modelTime>0?'Resume experiment':'Run experiment'} <span aria-hidden="true">${icon(running?'pause':'arrow-up-right')}</span>`;
   $('#lab-status').textContent=status||(running?'RUNNING · MODEL TIME IN SECONDS.':'PAUSED · OBSERVE, THEN CONTINUE.');
 }
 $('#lab-controls').addEventListener('input',()=>{
@@ -162,7 +163,7 @@ sizeObserver.observe(heroCanvas);sizeObserver.observe(particleCanvas);
 heroCanvas.addEventListener('pointermove',event=>{const b=heroCanvas.getBoundingClientRect();pointer={x:(event.clientX-b.left)/b.width-.5,y:(event.clientY-b.top)/b.height-.5};if(ambientPaused)drawHero();});
 heroCanvas.addEventListener('pointerleave',()=>{pointer={x:0,y:0};if(ambientPaused)drawHero();});
 $('#frequency').addEventListener('input',event=>{heroFrequency=+event.target.value;sliderStyle(event.target);$('#frequency-output').textContent=heroFrequency.toFixed(1);drawHero();});
-function motionState(){const button=$('#motion-toggle');button.setAttribute('aria-label',ambientPaused?'Play ambient animation':'Pause ambient animation');button.setAttribute('aria-pressed',String(ambientPaused));button.innerHTML=`<span aria-hidden="true">${ambientPaused?'▷':'Ⅱ'}</span>`;}
+function motionState(){const button=$('#motion-toggle');button.setAttribute('aria-label',ambientPaused?'Play ambient animation':'Pause ambient animation');button.setAttribute('aria-pressed',String(ambientPaused));button.innerHTML=icon(ambientPaused?'play':'pause');}
 $('#motion-toggle').addEventListener('click',()=>{ambientPaused=!ambientPaused;motionState();drawHero();drawParticles(phase);});
 reducedMotion.addEventListener('change',()=>{ambientPaused=reducedMotion.matches;motionState();drawHero();drawParticles(phase);});
 motionState();

@@ -24,3 +24,16 @@ dialog{border:0;padding:45px;color:var(--carbon);background:var(--paper);max-hei
 .map-caption{font-size:6px}.section-kicker>span:last-child,.understanding .scope-note{font-size:9px}.lab-readouts .mono{letter-spacing:0}.lab-readouts output small{font-size:10px}
 @media(max-width:800px) and (min-width:601px){.subject-entry{font-size:0}.lab-toolbar{gap:20px}.experiment-id{font-size:7px}.lab-readouts .mono{font-size:6px}.map-node .mono{font-size:6px}.map-caption{font-size:5px}.scope-note{font-size:8px}}
 @media(max-width:600px){.section-kicker{font-size:8px}.section-kicker>span:last-child{font-size:7px}.hero-topline>span:last-child{font-size:0}.hero-end{font-size:7px}.hero .eyebrow{font-size:8px}.hero .field-annotation{font-size:7px}#field-description{font-size:7px}.subject-entry{font-size:0}.subject-category{font-size:7px!important;letter-spacing:0}.subject-no{font-size:8px}.scope-note,.inline-button,.lesson-status,.depth-note,.understanding .scope-note{font-size:8px}.experiment-id{font-size:7px}.particle-note{font-size:7px}.particle-legend,.graph-heading,.graph-bottom{font-size:7px}.lab-readouts .mono{font-size:7px}.control-intro,.range-extents,.lab-foot>.mono,.model-details summary .mono{font-size:8px}.map-node .mono{font-size:6px}.map-caption{font-size:5px}.practice-intro .tag{font-size:7px}.search-caption{font-size:7px}.lesson-topline{font-size:7px}.site-footer>div>a,.site-footer>div>button{font-size:9px}.header-note{font-size:8px}}
+
+/* SVG icons stay monochrome and identical on mobile and desktop. */
+.icon-sprite{position:absolute;overflow:hidden;pointer-events:none}
+.ui-icon{display:inline-block;width:1em;height:1em;flex:none;vertical-align:-.14em;overflow:visible;fill:none;color:inherit}
+.button>.ui-icon{width:1.35em;height:1.35em}
+.button>span[aria-hidden],.text-link>span[aria-hidden],.round-arrow{line-height:1}
+.button>span[aria-hidden],.text-link>span[aria-hidden]{display:inline-flex;align-items:center}
+.reset-button{display:inline-flex;align-items:center;gap:5px}
+#motion-toggle>.ui-icon{width:17px;height:17px}
+.final-title>span>.ui-icon{display:block;width:1em;height:1em}
+.scope-note>.ui-icon{align-self:center}
+#search-results button>span:last-child{display:inline-flex;align-items:center}
+.text-link .ui-icon{min-width:13px;min-height:13px}

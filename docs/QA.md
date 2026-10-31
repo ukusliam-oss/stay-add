@@ -1,5 +1,13 @@
 # Verification — 2026-10-31
 
+## Mobile icon update
+
+UI direction, reset, play and pause symbols now use decorative inline SVG with a shared local symbol set. Unicode reaction notation in educational content remains text. Both initial HTML and JavaScript-generated UI avoid emoji-capable direction glyphs; SVG is hidden from assistive technology and control names remain textual.
+
+`npm run check`: 11/11 passed after adding regression checks for glyph reintroduction, symbol resolution and decorative semantics. At 375px the hero arrows rendered as monochrome vectors without horizontal overflow. Browser checks also confirmed Lab run/pause/reset icon states, two concept-preview icons, and filtered search-result icons, with no console warnings/errors. These are browser viewport checks, not a claim of physical iPhone/Android testing.
+
+The systematic product implementation plan is in `docs/IMPLEMENTATION-PLAN.md`; its future stages and proposed content counts are not completed implementation.
+
 ## Automated checks
 
 `npm run check`: 9/9 passed. Covers declared rate calibration, mass conservation at all UI extremes, monotonic bounded progress, concentration independence of k, half-life, temperature/area/catalyst direction, zero-time behaviour, CSV consistency, invalid physical inputs, content destinations, local assets, IDs and small-text token contrast.
