@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/Hero.astro';
+import SubjectList from '../components/SubjectList.astro';
+import ReactionLab from '../components/ReactionLab.astro';
+import ConnectionSection from '../components/ConnectionSection.astro';
+import Practice from '../components/Practice.astro';
+import {href} from '../lib/paths.ts';
+---
+<SiteLayout title="Curiosity compounds." path="/" home>
+
+    <Hero />
+
+    <div class="process-strip mono" role="group" aria-label="Our learning process"><span>QUESTION</span><b aria-hidden="true">+</b><span>EXPERIMENT</span><b aria-hidden="true">+</b><span>UNDERSTAND</span><b aria-hidden="true">+</b><span>CONNECT</span><b aria-hidden="true"><svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></b></div>
+
+    <section id="subjects" class="subjects section-pad" aria-labelledby="subjects-title">
+      <div class="section-kicker mono"><span>01 / EXPLORE</span><span>FOUR WAYS IN. NO DEAD ENDS.</span></div>
+      <div class="section-heading"><h2 id="subjects-title">Four disciplines.<br>One expanding universe.</h2><p>Start with what intrigues you.<br>Stay for what it connects to.</p></div>
+      <SubjectList />
+      <p class="scope-note mono"><span aria-hidden="true"><svg class="ui-icon" data-icon="corner-down-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-corner-down-right"></use></svg></span> FOUR ORIGINAL CONCEPT PREVIEWS. FULL COURSES & SYLLABUS MAPPING ARE IN DEVELOPMENT. <a href={href("/about")} class="inline-button" data-open="scope-dialog">VIEW PROTOTYPE SCOPE <svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></a></p>
+    </section>
+
+    <ReactionLab />
+
+    <ConnectionSection />
+
+    <section class="understanding section-pad" aria-labelledby="understanding-title"><div class="section-kicker mono"><span>THE APPROACH</span><span>DEPTH IS A CHOICE.</span></div><div class="section-heading"><h2 id="understanding-title">Go as deep<br>as your question goes.</h2><p>A clear foundation. A closer look.<br>Then a little further into the unknown.</p></div><div class="depth-grid"><article><span class="mono">01 / CORE</span><h3>Get the idea.</h3><p>Build a clear mental model of the principle. Start with a question, then find the explanation.</p><span class="mono depth-note">FOUNDATIONAL CONCEPTS</span></article><article><span class="mono">02 / DEEP</span><h3>Ask why.</h3><p>Look beneath the formula. Explore the assumptions, the mathematics, and the limits of a model.</p><span class="mono depth-note">UNDERSTANDING & DERIVATION</span></article><article><span class="mono">03 / BEYOND</span><h3>Keep going.</h3><p>Let one discovery become the next question. Follow meaningful connections across disciplines.</p><span class="mono depth-note">OPTIONAL FURTHER EXPLORATION</span></article></div><p class="scope-note mono">PLANNED LEARNING FRAMEWORK · NO EXAM BOARD OR EXAM YEAR HAS BEEN MAPPED IN THIS PROTOTYPE.</p></section>
+
+    <Practice />
+
+    <section class="final-cta section-pad"><div class="section-kicker mono"><span>THE NEXT QUESTION IS YOURS.</span><span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-down-left" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-down-left"></use></svg></span></div><a href={href("/explore")} class="final-title">KEEP<br>ADDING<span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></span></a><div class="cta-bottom"><p>Stay curious. Stay questioning.<br>STAY ADD.</p><a class="button" href={href("/labs/reaction-rates")}>Try an experiment <span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></span></a></div></section>
+
+</SiteLayout>

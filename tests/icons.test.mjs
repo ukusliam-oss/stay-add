@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { icon, iconNames } from '../dist/icons.js';
+import { readFile, readdir } from 'node:fs/promises';
+import { icon, iconNames } from '../src/lib/icons.ts';
 const html=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
-const app=await readFile(new URL('../dist/app.js',import.meta.url),'utf8');
+const scripts=await readdir(new URL('../src/scripts/',import.meta.url));
+const app=(await Promise.all(scripts.filter(p=>p.endsWith('.ts')).map(p=>readFile(new URL('../src/scripts/'+p,import.meta.url),'utf8')))).join('\n');
 test('navigation and transport icons cannot fall back to OS emoji glyphs',()=>{
   for(const [name,source] of [['initial page',html],['dynamic UI',app]])assert.doesNotMatch(source,/[↗↘↙↖↑↓↺↳▷Ⅱ\uFE0F]/,`${name} must use SVG icons`);
 });

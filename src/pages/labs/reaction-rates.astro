@@ -1,0 +1,8 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import ReactionLab from '../../components/ReactionLab.astro';
+import Action from '../../components/Action.astro';
+import {href} from '../../lib/paths.ts';
+---
+<SiteLayout title="Reaction rates lab" path="/labs/reaction-rates" active="lab"><PageMasthead title="Reaction rates." eyebrow="EXPERIMENT 001 / CHEMISTRY" description="Change the conditions of an illustrative first-order model. The reference curve, equations and assumptions are available before you run it." crumbs={[{label:'The lab',path:'/labs'}]}/><ReactionLab standalone/><section class="section-pad route-followup"><div><p class="mono">TAKE THE IDEA FURTHER</p><h2>From observation<br/>to explanation.</h2></div><div class="route-actions"><Action href={href('/subjects/chemistry/reaction-rates')} variant="primary">Read the concept preview</Action><Action href={href('/practice/chemistry/reaction-rates')} variant="text">Try the concept check</Action></div></section></SiteLayout>

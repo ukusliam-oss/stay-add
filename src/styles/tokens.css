@@ -1,0 +1,3 @@
+@font-face{font-family:Space;src:url('../assets/space-grotesk.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:Plex;src:url('../assets/ibm-plex-mono.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+:root{--carbon:#111513;--paper:#f0f0e9;--green:#c9ff61;--chem:#c1a6f6;--bio:#91e3b5;--phys:#9dc4ff;--math:#ffc59d;--line:rgba(17,21,19,.22);--dark-line:rgba(240,240,233,.2);--muted:#5c635c;--dark-muted:#a5aea5;--pad:clamp(24px,4.45vw,80px)}

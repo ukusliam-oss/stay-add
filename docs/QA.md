@@ -1,3 +1,5 @@
+> 이 문서는 이전 단일 페이지 버전의 검사 기록입니다. 현재 정적 다중 페이지 구조의 검사는 [P1 검증 기록](architecture/P1-QA.md)을 참고하세요.
+
 # Verification — 2026-10-31
 
 ## Mobile icon update

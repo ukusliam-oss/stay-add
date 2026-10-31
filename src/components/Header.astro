@@ -1,0 +1,17 @@
+---
+import {href} from "../lib/paths.ts";
+interface Props {active?:string}
+const {active=""}=Astro.props;
+---
+<header id="top" class="site-header">
+    <a class="wordmark" href={href("/")} aria-label="STAY ADD. home">STAY ADD<span>.</span></a>
+    <span class="header-note mono">AN INDEPENDENT<br>SCIENCE + MATHEMATICS LAB</span>
+    <button class="menu-toggle mono" aria-expanded="false" aria-controls="main-nav">MENU <span aria-hidden="true">+</span></button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href={href("/explore")} aria-current={active === "explore" ? "page" : undefined}>Explore <span class="nav-number">01</span></a>
+      <a href={href("/labs/reaction-rates")} aria-current={active === "lab" ? "page" : undefined}>Lab <span class="nav-number">02</span></a>
+      <a href={href("/connect/rates-of-change")} aria-current={active === "connect" ? "page" : undefined}>Connect <span class="nav-number">03</span></a>
+      <a href={href("/practice/chemistry/reaction-rates")} aria-current={active === "practice" ? "page" : undefined}>Practice <span class="nav-number">04</span></a>
+      <a href={href("/index")} class="search-button" data-open="search-dialog" aria-label="Search concepts"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><span class="search-word">Search</span></a>
+    </nav>
+  </header>

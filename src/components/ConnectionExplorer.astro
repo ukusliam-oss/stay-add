@@ -1,0 +1,23 @@
+---
+import {subjects,connections} from '../data/content.ts';
+import {subjectIds,connectionMeta} from '../data/subjects.ts';
+import type {ConnectionId} from '../data/types.ts';
+import {href} from '../lib/paths.ts';
+import Icon from './Icon.astro';
+interface Props {connection:ConnectionId;inline?:boolean}
+const {connection,inline=false}=Astro.props;
+const initial=connections[connection].chemistry;
+---
+<div data-connect data-mode={inline?"inline":"page"} data-connection-id={connection}>
+  <nav class="connection-themes" aria-label="Choose a connection">
+    {(Object.keys(connectionMeta) as ConnectionId[]).map((id,i)=><a href={href(`/connect/${connectionMeta[id].slug}`)} data-connection={id} aria-current={id===connection?'page':undefined}><span class="mono">0{i+1}</span>{connectionMeta[id].title}<span aria-hidden="true"><Icon name="arrow-up-right"/></span></a>)}
+  </nav>
+  <div class="connect-explorer">
+    <div class="connection-map"><div class="map-grid" aria-hidden="true"></div><svg class="map-lines" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><path d="M135 95 300 200 465 95M135 305 300 200 465 305"/></svg><div class="map-center" aria-hidden="true">+</div><span class="map-caption mono">ONE IDEA. FOUR PERSPECTIVES.</span>
+      {subjectIds.map(id=><button disabled type="button" class:list={['map-node',id]} data-discipline={id} aria-pressed={id==='chemistry'?'true':'false'}><span class="mono">{subjects[id].number} / {id==='mathematics'?'MATHEMATICS':subjects[id].name.toUpperCase()}</span><strong>{connections[connection][id].label}</strong><span class="node-dot"></span></button>)}
+    </div>
+    <div class="connection-detail" id="connection-detail" aria-live="polite" aria-atomic="true"><p class="eyebrow mono">01 / CHEMISTRY</p><h3>{initial.title}</h3><p class="connection-equation">{initial.equation}</p><p>{initial.text}</p><p class="connection-note">{initial.note}</p><a class="text-link" href={href(initial.link)}>{initial.action}<Icon name="arrow-up-right"/></a></div>
+  </div>
+  <details class="all-perspectives"><summary>Read all four perspectives</summary><div class="perspective-list">{subjectIds.map(id=><article id={`perspective-${id}`}><p class="mono">{subjects[id].name.toUpperCase()}</p><h3>{connections[connection][id].title}</h3><p>{connections[connection][id].text}</p><p class="perspective-equation">{connections[connection][id].equation}</p><p class="mono">{connections[connection][id].note}</p><a class="text-link" href={href(connections[connection][id].link)}>{connections[connection][id].action}<Icon name="arrow-up-right"/></a></article>)}</div></details>
+</div>
+<script>import '../scripts/connect.ts';</script>

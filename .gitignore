@@ -3,3 +3,5 @@ node_modules/
 .sites-local/
 artifacts/
 *.tar.gz
+dist/
+.astro/

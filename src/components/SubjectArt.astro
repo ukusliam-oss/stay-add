@@ -1,0 +1,8 @@
+---
+import type {SubjectId} from '../data/types.ts';
+interface Props {subject:SubjectId}
+const {subject}=Astro.props;
+---
+<span class="subject-art" aria-hidden="true"><svg viewBox="0 0 200 110">
+{subject==='chemistry'?<><path d="M55 64 93 33 137 57 161 23M93 33 98 88 137 57M55 64 98 88"/><circle cx="55" cy="64" r="12"/><circle cx="93" cy="33" r="18"/><circle cx="137" cy="57" r="14"/><circle cx="98" cy="88" r="9"/><circle cx="161" cy="23" r="7"/></>:subject==='biology'?<path d="M61 4c97 23-23 79 74 102M135 4c-97 23 23 79-74 102M68 10h60M81 21h34M83 34h31M71 48h55M65 62h66M77 76h43M84 89h30M70 101h58"/>:subject==='physics'?<><path d="M6 55h188M100 8v95" class="faint"/><path d="M8 55c16-60 30-60 46 0s30 60 46 0 30-60 46 0 30 60 46 0M8 55c16-30 30-30 46 0s30 30 46 0 30-30 46 0 30 30 46 0"/><circle cx="100" cy="55" r="4"/></>:<><path d="M20 85h165M53 100V9" class="faint"/><path d="M27 22q63 133 128-10M48 100 140 7"/><circle cx="106" cy="51" r="5"/></>}
+</svg></span>

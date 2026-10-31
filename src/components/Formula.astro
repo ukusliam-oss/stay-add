@@ -1,0 +1,13 @@
+---
+import type {SubjectId} from '../data/types.ts';
+interface Props {subject:SubjectId;caption:string}
+const {subject,caption}=Astro.props;
+const equations:Record<SubjectId,{label:string;markup:string}>={
+  chemistry:{label:'k equals A times e to the power negative activation energy divided by R T',markup:'<mi>k</mi><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mo>−</mo><mfrac><msub><mi>E</mi><mi>a</mi></msub><mrow><mi>R</mi><mi>T</mi></mrow></mfrac></mrow></msup>'},
+  biology:{label:'Net movement from higher to lower concentration',markup:'<mtext>net movement:</mtext><mspace width=".4em"/><mtext>high</mtext><mo>→</mo><mtext>low</mtext>'},
+  physics:{label:'Velocity equals the derivative of position with respect to time',markup:'<mi>v</mi><mo>=</mo><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>'},
+  mathematics:{label:'The derivative of f at x equals the limit as h approaches zero of f of x plus h minus f of x divided by h',markup:'<msup><mi>f</mi><mo>′</mo></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><munder><mo>lim</mo><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo>)</mo><mo>−</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mi>h</mi></mfrac>'}
+};
+const equation=equations[subject];
+---
+<figure class:list={['formula-block',subject]}><math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label={equation.label}><mrow set:html={equation.markup}/></math><figcaption>{caption}</figcaption></figure>

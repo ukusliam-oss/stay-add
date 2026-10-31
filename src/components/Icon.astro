@@ -1,0 +1,6 @@
+---
+import type {IconName} from '../lib/icons.ts';
+interface Props {name:IconName;class?:string}
+const {name,class:className=''}=Astro.props;
+---
+<svg class:list={['ui-icon',className]} data-icon={name} viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href={`#icon-${name}`}/></svg>

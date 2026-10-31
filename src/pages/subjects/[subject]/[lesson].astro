@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import PageMasthead from '../../../components/PageMasthead.astro';
+import DraftNotice from '../../../components/DraftNotice.astro';
+import Formula from '../../../components/Formula.astro';
+import Action from '../../../components/Action.astro';
+import {subjects} from '../../../data/content.ts';
+import {subjectIds,subjectMeta,subjectPath,lessonPath} from '../../../data/subjects.ts';
+import {href} from '../../../lib/paths.ts';
+import type {SubjectId} from '../../../data/types.ts';
+export function getStaticPaths(){return subjectIds.map(id=>({params:{subject:subjectMeta[id].slug,lesson:subjectMeta[id].lesson},props:{id}}));}
+const {id}=Astro.props as {id:SubjectId};
+const preview=subjects[id],meta=subjectMeta[id];
+---
+<SiteLayout title={meta.lessonTitle} description={`${preview.question} An original draft concept preview from STAY ADD.`} path={lessonPath(id)} active="explore">
+  <PageMasthead title={meta.lessonTitle} eyebrow={`${preview.number} / ${preview.name.toUpperCase()} · CONCEPT PREVIEW`} description={preview.question} crumbs={[{label:'Explore',path:'/explore'},{label:preview.name,path:subjectPath(id)}]}/>
+  <div class:list={['lesson-layout','section-pad',id]}>
+    <nav class="lesson-toc" aria-label="On this preview"><p class="mono">ON THIS PAGE</p><a href="#the-question">The question</a><a href="#the-principle">The principle</a><a href="#a-closer-look">A closer look</a><a href="#keep-exploring">Keep exploring</a><a href="#source">Source & status</a></nav>
+    <article class="lesson-reading"><DraftNotice/>
+      <section id="the-question"><p class="mono">01 / THE QUESTION</p><h2>{preview.question}</h2></section>
+      <section id="the-principle"><p class="mono">02 / THE PRINCIPLE</p><p class="reading-lead">{preview.definition}</p><Formula subject={id} caption={preview.units}/></section>
+      <section id="a-closer-look"><p class="mono">03 / A CLOSER LOOK</p><h2>Look beneath the first answer.</h2><p>{preview.deeper}</p></section>
+      <section id="keep-exploring"><p class="mono">04 / KEEP EXPLORING</p><h2>Follow the idea.</h2><div class="route-actions"><Action href={href(id==='chemistry'?'/labs/reaction-rates':'/connect/rates-of-change')} variant="primary">{id==='chemistry'?'Try the reaction rates lab':'Explore rates of change'}</Action>{id==='chemistry'&&<Action href={href('/practice/chemistry/reaction-rates')} variant="text">Try the concept check</Action>}</div></section>
+      <section id="source" class="source-note"><p class="mono">SOURCE & REVIEW STATUS</p><a href={preview.source} target="_blank" rel="noopener noreferrer">{preview.sourceName}</a><p>Original explanatory summary. Draft; no independent academic review or syllabus-objective mapping is recorded. This preview is not the complete eight-part lesson planned for a later stage.</p></section>
+    </article>
+  </div>
+</SiteLayout>

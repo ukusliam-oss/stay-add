@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import Icon from '../../components/Icon.astro';
+import {searchIndex} from '../../data/search.ts';
+import {href} from '../../lib/paths.ts';
+---
+<SiteLayout title="Concept index" path="/index"><PageMasthead title="Follow a question." eyebrow="THE INDEX / PREVIEWS & CONNECTIONS" description="Search every available concept preview, the working lab, curated connections and the original practice question."/><section class="section-pad route-content index-page"><form id="index-form" class="index-form" action={href('/index')} method="get"><label for="index-query" class="mono">SEARCH THIS PROTOTYPE</label><div><input id="index-query" name="q" type="search" autocomplete="off" placeholder="Try reaction, energy or derivative…"/><button disabled type="submit" class="button primary">Search<Icon name="arrow-up-right"/></button></div></form><p id="index-status" class="mono index-status" role="status">{searchIndex.length} entries available.</p><ul id="index-results" class="index-results">{searchIndex.map(item=><li data-search-text={`${item.title} ${item.keywords}`.toLowerCase()}><a href={href(item.path)}><span><small class="mono">{item.kind}</small><strong>{item.title}</strong></span><Icon name="arrow-up-right"/></a></li>)}</ul><p id="index-empty" hidden>No matches. Try a subject name, reaction, energy or change.</p><noscript><p class="no-js-note">All available entries are listed above. Enable JavaScript for instant filtering.</p></noscript></section></SiteLayout>
+<script>import '../../scripts/index.ts';</script>

@@ -1,0 +1,11 @@
+import {spawn} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const [major,minor,patch]=process.versions.node.split('.').map(Number);
+const supported=major>22||(major===22&&(minor>23||(minor===23&&patch>=4)));
+const cli=fileURLToPath(new URL('../node_modules/astro/bin/astro.mjs',import.meta.url));
+const args=process.argv.slice(2);
+if(!supported)console.log('Using an isolated Node.js 24 runtime for Astro. System Node.js is unchanged.');
+const child=supported?spawn(process.execPath,[cli,...args],{stdio:'inherit'}):spawn('npm',['exec','--yes','--package=node@24.22.2','--','node',cli,...args],{stdio:'inherit'});
+for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
+child.on('error',error=>{console.error(error.message);process.exitCode=1;});
+child.on('exit',(code,signal)=>{process.exitCode=code??(signal?1:0);});

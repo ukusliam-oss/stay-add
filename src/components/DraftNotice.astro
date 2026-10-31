@@ -1,0 +1,8 @@
+---
+interface Props {compact?:boolean;label?:string}
+const {compact=false,label='CONCEPT PREVIEW'}=Astro.props;
+---
+<aside class:list={['draft-notice',{compact}]} aria-label="Content review status">
+  <span class="mono">DRAFT / {label}</span>
+  {!compact&&<p>Target curriculum: Cambridge IGCSE 2028. This preview has not been independently reviewed or mapped to a syllabus objective. It is not a complete lesson or official exam resource.</p>}
+</aside>

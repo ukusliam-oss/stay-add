@@ -1,0 +1,18 @@
+---
+import {href} from '../lib/paths.ts';
+import Action from './Action.astro';
+interface Props {kind:'scope'|'accessibility'}
+const {kind}=Astro.props;
+---
+{kind==='scope'?<>
+  <p>This is a working frontend prototype of an independent science and mathematics platform. It is not affiliated with an exam board.</p>
+  <h3>Available to explore</h3><ul><li>A controllable generative hero, four original concept previews and an illustrative reaction rates lab.</li><li>Three curated cross-subject connections, a searchable preview index and one original practice question with feedback.</li><li>Individual subject, preview, lab, practice and connection pages, model data export, keyboard controls and reduced-motion support.</li></ul>
+  <h3>A clear review status</h3><p>Cambridge IGCSE 2028 is the selected target curriculum: Extended for the three sciences, with Additional Mathematics treated separately. Existing preview content has not been independently reviewed or mapped to official objectives. It remains Draft.</p>
+  <h3>Still to be built and reviewed</h3><p>Full courses, syllabus coverage, a problem bank, full assessment tools, accounts, progress tracking and a large knowledge graph. The preview pages are not complete lessons or syllabus-verified teaching material.</p>
+  <p>All interactive demos run in your browser. No signup or personal data is required. No simulated enrolments, learner statistics or testimonials are used.</p><Action href={href('/labs/reaction-rates')} variant="primary">Explore the working lab</Action>
+</>:<>
+  <h3>Keyboard and motion</h3><p>Use Tab to move between controls, Enter or Space to activate buttons, arrow keys to adjust sliders and Escape to close dialogs. The concept-map nodes are buttons. Ambient animation can be paused and follows your device’s reduced-motion preference. Numerical lab results remain available without animation.</p>
+  <h3>Reading without JavaScript</h3><p>Preview explanations, formulas, source links, the reference lab graph and all connection perspectives are in the page itself. The search index lists every available entry. Interactive experiments and immediate feedback require JavaScript.</p>
+  <h3>Privacy</h3><p>This prototype has no account system, analytics, cookies, tracking pixels or server-side submissions. Answers and controls last only for the current page session. CSV export creates a file locally. Source links open external websites in a new tab.</p>
+  <h3>Access information</h3><p>Accessibility is a design goal. No formal certification or production Core Web Vitals result is claimed. The interface uses semantic sections, native controls, visible focus, labelled visualisations and text alternatives. Desktop viewport checks do not replace testing with real phones and assistive technology.</p>
+</>}

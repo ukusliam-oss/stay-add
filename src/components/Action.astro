@@ -1,0 +1,8 @@
+---
+import Icon from './Icon.astro';
+import type {IconName} from '../lib/icons.ts';
+interface Props {href?:string;variant?:'primary'|'outline'|'text';icon?:IconName;type?:'button'|'submit'|'reset';id?:string;class?:string;disabled?:boolean}
+const {href,variant='outline',icon='arrow-up-right',type='button',id,class:className='',disabled}=Astro.props;
+const classes=[variant==='text'?'text-link':'button',variant==='primary'?'primary':'',className];
+---
+{href?<a href={href} class:list={classes} id={id}><slot/><Icon name={icon}/></a>:<button type={type} class:list={classes} id={id} disabled={disabled}><slot/><Icon name={icon}/></button>}

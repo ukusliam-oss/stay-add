@@ -1,0 +1,10 @@
+---
+import {href} from '../lib/paths.ts';
+interface Props {title:string;eyebrow:string;description:string;crumbs?:{label:string;path:string}[]}
+const {title,eyebrow,description,crumbs=[]}=Astro.props;
+---
+<section class="page-masthead section-pad" aria-labelledby="page-title">
+  <nav class="breadcrumbs mono" aria-label="Breadcrumb"><a href={href('/')}>Home</a>{crumbs.map(c=><><span aria-hidden="true">/</span><a href={href(c.path)}>{c.label}</a></>)}</nav>
+  <div class="section-kicker mono"><span>{eyebrow}</span><span>STAY CURIOUS. KEEP CONNECTING.</span></div>
+  <div class="page-heading"><h1 id="page-title">{title}</h1><p>{description}</p></div>
+</section>

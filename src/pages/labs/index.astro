@@ -1,0 +1,8 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import Action from '../../components/Action.astro';
+import DraftNotice from '../../components/DraftNotice.astro';
+import {href} from '../../lib/paths.ts';
+---
+<SiteLayout title="The lab" path="/labs" active="lab"><PageMasthead title="A place for ‘what if?’" eyebrow="02 / THE LAB" description="Make a prediction. Change a condition. Compare the outcome with the model. One illustrative experiment is available in this prototype."/><section class="section-pad route-content"><div class="lab-entry"><div><p class="mono">EXPERIMENT 001 / CHEMISTRY</p><h2>Reaction rates</h2><p>Explore how temperature, initial concentration, relative surface area and an illustrative catalyst option affect a first-order A → B proxy.</p><DraftNotice compact label="ILLUSTRATIVE MODEL"/><Action href={href('/labs/reaction-rates')} variant="primary">Enter the lab</Action></div><svg class="entry-graph" viewBox="0 0 400 240" role="img" aria-label="Illustration of product concentration approaching a plateau"><path d="M30 20v190h340" class="axis"/><path d="M30 210C90 55 130 45 370 40"/><path d="M30 210C150 150 220 100 370 80" class="reference"/></svg></div></section></SiteLayout>

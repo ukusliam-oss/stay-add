@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Dialogs from '../components/Dialogs.astro';
+import IconSprite from '../components/IconSprite.astro';
+import {canonical,asset} from '../lib/paths.ts';
+import {SITE_DESCRIPTION} from '../config/site.ts';
+import displayFont from '../assets/space-grotesk.woff2?url';
+import '../styles/tokens.css';
+import '../styles/site.css';
+import '../styles/learning.css';
+interface Props {title:string;description?:string;path:string;active?:string;home?:boolean;noindex?:boolean}
+const {title,description=SITE_DESCRIPTION,path,active='',home=false,noindex=false}=Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#111513"/><meta name="description" content={description}/>
+    <title>{home?'STAY ADD. — Curiosity compounds.':`${title} — STAY ADD.`}</title>
+    {path!=="/404"&&<><link rel="canonical" href={canonical(path)}/><meta property="og:url" content={canonical(path)}/></>}
+    <meta property="og:title" content={`${title} — STAY ADD.`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/>
+    {noindex&&<meta name="robots" content="noindex,follow"/>}
+    <link rel="icon" href={asset('assets/favicon.svg')} type="image/svg+xml"/>
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin/>
+  </head>
+  <body>
+    <IconSprite/><a class="skip-link" href="#main">Skip to content</a>
+    <Header active={active}/>
+    <main id="main" tabindex="-1" class:list={[!home&&'inner-page']}><slot/></main>
+    <Footer/><Dialogs/>
+    <noscript><div class="noscript">All preview explanations and links remain available. Interactive experiments, instant search and answer feedback require JavaScript.</div></noscript>
+    <script>import '../scripts/site.ts';</script>
+  </body>
+</html>

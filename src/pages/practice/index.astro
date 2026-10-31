@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import Action from '../../components/Action.astro';
+import {href} from '../../lib/paths.ts';
+---
+<SiteLayout title="Practice" path="/practice" active="practice"><PageMasthead title="Test the reasoning." eyebrow="04 / PRACTICE" description="An answer is a starting point. Explore one original concept check with feedback, a hint and a model explanation."/><section class="section-pad route-content"><div class="route-list"><a href={href('/practice/chemistry/reaction-rates')}><span class="mono">CHEMISTRY / ORIGINAL QUESTION</span><strong>A first-order thought experiment</strong><span class="mono">1 QUESTION</span><span aria-hidden="true">+</span></a></div><p class="scope-note mono">ONE CONCEPT CHECK. NOT AN OFFICIAL EXAM ITEM OR A COMPLETE QUESTION BANK.</p><div class="route-actions"><Action href={href('/labs/reaction-rates')} variant="text">Return to the model</Action></div></section></SiteLayout>

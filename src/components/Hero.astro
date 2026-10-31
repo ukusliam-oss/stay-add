@@ -1,0 +1,32 @@
+---
+import {href} from "../lib/paths.ts";
+---
+<section id="home" class="hero dark" aria-labelledby="hero-title">
+      <div class="hero-topline mono"><span><i class="status-dot"></i> CURIOSITY COMPOUNDS.</span><span>OPEN FOR EXPLORATION <span class="cross">+</span></span></div>
+      <div class="hero-composition">
+        <div class="hero-copy">
+          <p class="eyebrow mono">YOUR CURIOSITY IS THE EXPERIMENT.</p>
+          <h1 id="hero-title">THE MORE<br>YOU KNOW,<br>THE MORE<br><span>YOU ASK.</span></h1>
+          <div class="hero-bottom">
+            <p>Four disciplines. Infinite connections.<br>An interactive laboratory for understanding<br class="desktop-break"> science and mathematics.</p>
+            <div class="hero-actions"><a class="button primary" href={href("/explore")}>Explore the subjects <span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></span></a><a class="text-link" href={href("/labs/reaction-rates")}>Enter the lab <span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-up-right"></use></svg></span></a></div>
+          </div>
+        </div>
+        <div class="hero-experiment">
+          <div class="field-annotation mono"><span>FIG. 001</span><span>A FIELD OF POSSIBILITIES</span><span><svg class="ui-icon" data-icon="arrow-down-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-down-right"></use></svg></span></div>
+          <div class="field-stage">
+            <canvas id="hero-canvas" role="img" aria-label="A generative three-dimensional field of green particles. The frequency control changes its mathematical wave pattern."></canvas>
+            <span class="coordinate coordinate-top mono">+ Y</span><span class="coordinate coordinate-bottom mono">X +</span>
+            <span class="field-cross cross" aria-hidden="true">+</span>
+            <span class="orbit-label mono">f(x, y, z) = curiosity</span>
+          </div>
+          <div class="field-controls">
+            <div class="field-control-head mono"><label for="frequency">CHANGE THE FREQUENCY</label><output aria-live="off" id="frequency-output" for="frequency">3.0</output></div>
+            <div class="field-control-row"><span class="mono">01</span><input disabled id="frequency" type="range" min="1" max="7" value="3" step="0.1" aria-describedby="field-description"><span class="mono">07</span><button disabled id="motion-toggle" class="icon-button" aria-label="Pause ambient animation" aria-pressed="false"><span aria-hidden="true"><svg class="ui-icon" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-pause"></use></svg></span></button></div>
+            <p id="field-description" class="mono">MOVE. ADJUST. NOTICE SOMETHING NEW.<br><span>Generative artwork · not a physical simulation</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-end mono"><span>SCROLL TO DISCOVER <span aria-hidden="true"><svg class="ui-icon" data-icon="arrow-down" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow-down"></use></svg></span></span><span>IGCSE INSPIRED. CURIOSITY DRIVEN.</span><span>PROTOTYPE / V.0.2</span></div>
+    </section>
+<script>import "../scripts/hero.ts";</script>

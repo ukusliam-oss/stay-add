@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageMasthead from '../components/PageMasthead.astro';
+import Action from '../components/Action.astro';
+import {href} from '../lib/paths.ts';
+---
+<SiteLayout title="Page not found" path="/404" noindex><PageMasthead title="A different kind of unknown." eyebrow="404 / PAGE NOT FOUND" description="This page is not part of the prototype. There are still plenty of questions worth following."/><section class="section-pad route-content"><div class="route-actions"><Action href={href('/explore')} variant="primary">Explore the subjects</Action><Action href={href('/index')} variant="text">Search the index</Action></div></section></SiteLayout>

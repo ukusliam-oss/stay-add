@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { defaults, rateConstant, sample, series, csv } from '../dist/model.js';
+import { defaults, rateConstant, sample, series, csv } from '../src/lib/model.ts';
 test('reference rate constant matches the declared calibration',()=>assert.ok(Math.abs(rateConstant(defaults)-.035)<1e-12));
 test('mass is conserved and progress is bounded at all UI extremes',()=>{
   for(const temperature of [10,25,60])for(const concentration of [.25,1,2])for(const area of [1,4])for(const catalyst of [false,true]){

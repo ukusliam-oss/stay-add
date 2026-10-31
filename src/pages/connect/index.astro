@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import Icon from '../../components/Icon.astro';
+import {connectionMeta} from '../../data/subjects.ts';
+import type {ConnectionId} from '../../data/types.ts';
+import {href} from '../../lib/paths.ts';
+---
+<SiteLayout title="Connect" path="/connect" active="connect"><PageMasthead title="Follow the in-between." eyebrow="03 / CONNECT" description="Three curated connections. Four perspectives on each. Shared ideas do not make their definitions, models or units identical."/><section class="section-pad route-content"><div class="connection-catalog">{(Object.keys(connectionMeta) as ConnectionId[]).map((id,i)=><a href={href(`/connect/${connectionMeta[id].slug}`)}><span class="mono">0{i+1} / FOUR PERSPECTIVES</span><h2>{connectionMeta[id].title}</h2><p>{connectionMeta[id].summary}</p><Icon name="arrow-up-right"/></a>)}</div><p class="scope-note mono">CURATED DRAFT EXPLANATIONS. A LARGE KNOWLEDGE GRAPH IS A LATER STEP.</p></section></SiteLayout>

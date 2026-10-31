@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageMasthead from '../components/PageMasthead.astro';
+import SubjectList from '../components/SubjectList.astro';
+import Action from '../components/Action.astro';
+import {href} from '../lib/paths.ts';
+---
+<SiteLayout title="Explore" description="Four disciplines. Four original concept previews. Choose a starting point for your next question." path="/explore" active="explore">
+  <PageMasthead title="Choose your field." eyebrow="01 / EXPLORE" description="Four disciplines. One expanding universe. Start with a concept preview, then follow an experiment or a connection."/>
+  <section class="section-pad route-content"><SubjectList/><p class="scope-note mono">FOUR DRAFT PREVIEWS AVAILABLE. A FULL CURRICULUM IS IN DEVELOPMENT.</p><div class="route-actions"><Action href={href('/labs/reaction-rates')} variant="primary">Try an experiment</Action><Action href={href('/index')} variant="text">Search the index</Action></div></section>
+</SiteLayout>

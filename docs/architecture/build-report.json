@@ -1,0 +1,184 @@
+{
+  "status": "passed",
+  "base_path": "/stay-add",
+  "html_pages": 23,
+  "required_routes": 22,
+  "internal_references_checked": 1201,
+  "font_bytes": 32372,
+  "max_initial_js_gzip": 11035,
+  "page_reports": [
+    {
+      "page": "404.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "about/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "accessibility/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "connect/energy-transfer/index.html",
+      "initial_js_gzip": 7617,
+      "scripts": [
+        "_astro/ConnectionExplorer.astro_astro_type_script_index_0_lang.D2sQEbcX.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "connect/feedback-systems/index.html",
+      "initial_js_gzip": 7617,
+      "scripts": [
+        "_astro/ConnectionExplorer.astro_astro_type_script_index_0_lang.D2sQEbcX.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "connect/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "connect/rates-of-change/index.html",
+      "initial_js_gzip": 7617,
+      "scripts": [
+        "_astro/ConnectionExplorer.astro_astro_type_script_index_0_lang.D2sQEbcX.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "design-system/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "explore/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "index/index.html",
+      "initial_js_gzip": 7366,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js",
+        "_astro/index.astro_astro_type_script_index_0_lang.BICeo6XB.js"
+      ]
+    },
+    {
+      "page": "index.html",
+      "initial_js_gzip": 11035,
+      "scripts": [
+        "_astro/Hero.astro_astro_type_script_index_0_lang.CTbJhzEx.js",
+        "_astro/ReactionLab.astro_astro_type_script_index_0_lang.Dwo4M84W.js",
+        "_astro/ConnectionExplorer.astro_astro_type_script_index_0_lang.D2sQEbcX.js",
+        "_astro/Practice.astro_astro_type_script_index_0_lang.DMFo3Jpj.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "labs/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "labs/reaction-rates/index.html",
+      "initial_js_gzip": 8228,
+      "scripts": [
+        "_astro/ReactionLab.astro_astro_type_script_index_0_lang.Dwo4M84W.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "practice/chemistry/reaction-rates/index.html",
+      "initial_js_gzip": 7565,
+      "scripts": [
+        "_astro/Practice.astro_astro_type_script_index_0_lang.DMFo3Jpj.js",
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "practice/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/additional-mathematics/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/additional-mathematics/the-derivative/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/biology/diffusion/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/biology/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/chemistry/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/chemistry/reaction-rates/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/physics/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    },
+    {
+      "page": "subjects/physics/motion-and-graphs/index.html",
+      "initial_js_gzip": 6933,
+      "scripts": [
+        "_astro/SiteLayout.astro_astro_type_script_index_0_lang.DgCNIYCf.js"
+      ]
+    }
+  ],
+  "recorded_on": "2026-11-01",
+  "note": "Local snapshot from npm ci --ignore-scripts and npm run verify; G0 remains not_ready."
+}

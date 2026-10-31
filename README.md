@@ -1,57 +1,70 @@
 # STAY ADD. — Curiosity compounds.
 
-실제로 조작할 수 있는 반응형 프런트엔드 프로토타입입니다. 기존 프로젝트와 분리된 새 폴더에 구현했습니다.
+Carbon / Paper / Signal Green과 과학적 생성형 시각화를 사용하는 반응형 학습 프런트엔드입니다. 공개 사이트는 학술 검토 전인 프로토타입입니다.
 
-공개 웹사이트: [ukusliam-oss.github.io/stay-add](https://ukusliam-oss.github.io/stay-add/)
+- [공개 웹사이트](https://ukusliam-oss.github.io/stay-add/)
+- [과목 탐색](https://ukusliam-oss.github.io/stay-add/explore/)
+- [공개 저장소](https://github.com/ukusliam-oss/stay-add)
+- [단계별 실행 계획](docs/IMPLEMENTATION-PLAN.md)
 
-공개 저장소: [github.com/ukusliam-oss/stay-add](https://github.com/ukusliam-oss/stay-add)
-
-제품 명세를 실현하기 위한 범위·선행 조건·단계별 통과 기준은 [단계별 실행 계획](docs/IMPLEMENTATION-PLAN.md)에 정리했습니다.
-
-1단계(P0)의 실제 조사·결정·출처·위험·통과 판정은 [기준 확정 실행 기록](docs/foundation/P0-FOUNDATION.md)에 있습니다. 시험 기준은 Cambridge IGCSE 2028년 과학 Extended로 확정됐습니다. 콘텐츠 언어·검토 책임은 선택/역할 지정 대기이며 G0는 아직 미통과입니다. `npm run foundation:check`는 기록 무결성을 검사하고, `npm run foundation:ready`는 미결정 항목이 있으면 실패합니다.
-
-## GitHub Pages 배포
-
-`main`에 푸시하면 GitHub Actions가 Node.js 24에서 `npm ci --ignore-scripts`와 `npm run check`를 실행한 뒤 `dist/`만 GitHub Pages에 배포합니다. 수동 배포는 저장소 Actions의 `Verify and deploy GitHub Pages`에서 실행할 수 있습니다. 별도 배포 토큰이나 외부 서비스 키가 필요하지 않습니다.
-
-GitHub Pages 설정의 배포 소스는 **GitHub Actions**입니다. 모든 앱 파일 참조가 상대경로이므로 `/stay-add/` 하위 주소에서도 작동합니다.
+P0에서 시험 기준은 Cambridge IGCSE 2028 · 과학 Extended로 확정했습니다. 언어 정책·독립 검토 역할은 미정이므로 G0는 아직 `not_ready`입니다. P1에서 G0의 미결정과 독립적인 정적 제품 구조를 구현했습니다. [구조 결정과 범위](docs/architecture/P1-STRUCTURE.md), [검증 기록](docs/architecture/P1-QA.md), [배포·복구 절차](docs/architecture/RELEASE.md)를 참고하세요.
 
 ## 실행
 
-Node.js 20 이상에서 `npm run dev`를 실행하고 표시되는 로컬 주소를 엽니다. 기본 주소는 `http://127.0.0.1:4173`입니다. 배포할 때는 `dist/`를 정적 사이트로 제공하면 됩니다. 제품 실행에는 패키지 설치나 빌드 단계가 필요하지 않습니다.
+Node.js 24 권장. `npm ci --ignore-scripts`로 의존성을 설치합니다.
 
-`npm run check`는 JavaScript 구문과 모델·콘텐츠·대비·SVG 아이콘 회귀 테스트 11개를 검사합니다. `npm test`는 테스트만 실행합니다.
+```sh
+npm run dev
+```
 
-접근성 자동 검사를 재현하려면 `npm ci` 후 개발 서버의 `/__qa`를 열고 검사 버튼을 누르세요. 이 경로와 axe-core는 개발 서버에만 있고 `dist/`에 포함되지 않습니다.
+개발 주소는 `http://127.0.0.1:4321/stay-add/`입니다. 실제 배포 산출물은 다음으로 확인합니다.
 
-## 구현 범위
+```sh
+npm run build
+npm run preview
+```
 
-- Carbon / Paper / Signal Green, Space Grotesk / IBM Plex Mono, Neo-Swiss 그리드와 과목별 색상.
-- 포인터·주파수·일시정지에 반응하는 수학적 입자 Hero.
-- Chemistry, Biology, Physics, Additional Mathematics의 독립적인 개념 미리보기 4개.
-- 반응 속도 Lab: 온도·초기 농도·상대 표면적·촉매, 실행·정지·재개·초기화, 입자 표현, 기준/선택 곡선, 수치 및 CSV.
-- 변화율·에너지 전달·피드백의 3가지 연결과 각각 4개 과목 관점.
-- 검색, 독자적으로 작성한 연습문제 1개, 선택별 피드백과 힌트.
-- 모바일 메뉴, 네이티브 모달, 키보드 컨트롤, 장치의 움직임 감소 선호 반영, 현재 탭 세션 내 모션 토글.
-- 프로토타입 범위, 학습 콘텐츠 검토 상태, 모델 가정·한계·출처, 접근성·개인정보 안내.
+미리보기 주소는 `http://127.0.0.1:4173/stay-add/`입니다. Astro 7.4.4는 Node ≥22.23.4가 필요합니다. 지원되지 않는 로컬 Node에서는 실행 도우미가 고정된 npm Node 24.22.2로 Astro 명령만 실행합니다. 전역 Node를 바꾸지 않으며 최초 실행에 네트워크가 필요합니다. 모델 테스트와 미리보기 서버는 Node ≥22.18을 사용합니다.
 
-## 교육 콘텐츠와 모델
+## 검증과 공개 배포
 
-정식 강좌, 검증된 문제은행, 시험위원회·syllabus·시험 연도 매핑, 로그인, 학습 기록은 구현하지 않았습니다. 초안 상태를 화면과 모달에서 표시합니다.
+```sh
+npm run verify
+```
 
-Lab은 실재 반응에 적합시킨 모델이 아닌, 표면적 배수를 포함하는 설명용 비가역 1차 반응 A → B 프록시입니다. `dist/model.js`의 결정론적 계산과 입자 애니메이션은 분리됩니다. 입자 충돌을 계산하거나 실제 실험값을 제공한다고 주장하지 않습니다.
+정적 빌드 → TypeScript/Astro 검사 → P0 기록 검사 → 회귀 테스트 14개 → 모든 내부 링크·접근성 참조·JS/폰트 예산 검사 순서입니다. `npm test`는 기존 빌드에 대한 테스트만, `npm run check`는 빌드 이후 코드·기록·테스트만 실행합니다. `npm run foundation:ready`는 미결정 항목 때문에 현재 의도적으로 실패합니다. 데이터 무결성을 검사하는 `foundation:check`와 준비 판정은 다릅니다.
 
-수식: `k = S × A × exp(-Ea / RT)`, `[B](t) = [A]₀(1-exp(-kt))`. 기본 25 °C, S=1, Ea=40 kJ mol⁻¹에서 k=0.035 s⁻¹이 되도록 A를 정합니다. 촉매는 동일한 A와 Ea=35 kJ mol⁻¹를 사용합니다. 초기 농도는 k에 영향을 주지 않습니다. 화면 밖이나 숨긴 탭에서는 진행을 자동 정지합니다.
+`main`에 푸시하면 GitHub Actions가 Node 24에서 `npm ci --ignore-scripts`와 `npm run verify`를 실행하고 생성한 `dist/`만 GitHub Pages에 배포합니다. 저장소 Pages의 소스는 GitHub Actions입니다. `/stay-add/` 기준 링크와 자원 경로를 공통 함수로 생성합니다. `dist/`는 Git 제외 생성물이며 직접 수정하지 않습니다.
+
+로컬 접근성 도구는 미리보기 서버의 `/__qa`입니다. 경로 선택 후 axe 검사를 실행하거나, 스크립트를 차단한 iframe으로 정적 본문을 확인할 수 있습니다. 이 도구와 axe는 공개 산출물에 포함되지 않습니다.
+
+## 실제 구현 범위
+
+- 기존 대형 타이포그래피·수학적 입자 Hero·과목별 색상과 SVG 방향 아이콘.
+- Explore, 네 과목 허브, 개념 미리보기 4개, Lab, Practice, Connect, Index의 독립 주소.
+- 반응 속도 Lab: 온도·초기 농도·상대 표면적·촉매, 실행·정지·재개·초기화, 입자 표현, 선택/기준 곡선, 수치·CSV.
+- 변화율·에너지 전달·피드백의 세 연결 주제와 각각 네 과목 관점.
+- 검색과 독자 문항 1개, 선택별 피드백·힌트·네이티브 모범 답안 disclosure.
+- JS 없이 읽을 수 있는 본문·MathML·출처·연결 설명·Lab 기준 곡선. 준비 후에만 활성화하는 인터랙티브 컨트롤.
+- 키보드 탐색·네이티브 모달·포커스 복귀·모바일 메뉴·모션 감소 설정 및 정지.
+
+정식 여덟 요소 Lesson, 검토된 문제은행, 공식 목표 매핑, 전체 syllabus 대응, 로그인·학습 기록은 미구현입니다. 기존 영어 UI를 유지하는 것은 새로운 언어 정책의 확정을 의미하지 않습니다. 콘텐츠는 Draft이며 공식 시험 자료가 아닙니다.
+
+Lab은 실재 반응에 적합시킨 모델이 아닌, 표면적 배수를 포함하는 설명용 비가역 1차 반응 A → B 프록시입니다. 결정론적 계산과 입자 애니메이션은 분리됩니다. 입자 충돌을 계산하거나 실험값을 제공하지 않습니다.
+
+`k = S × A × exp(-Ea / RT)`, `[B](t) = [A]₀(1-exp(-kt))`. 기본 25°C, S=1, Ea=40 kJ mol⁻¹에서 k=0.035 s⁻¹이 되도록 A를 정합니다. 촉매는 동일한 A와 Ea=35 kJ mol⁻¹입니다. 초기 농도는 k에 영향을 주지 않습니다. 화면 밖과 숨긴 탭에서는 실험을 자동 정지합니다.
 
 ## 구성
 
-- `dist/index.html`: 의미 구조와 본문
-- `dist/style.css`: 디자인 토큰과 반응형 스타일
-- `dist/app.js`: UI, 네이티브 Canvas와 SVG
-- `dist/content.js`: 미니 레슨, 검색 색인, Connect 데이터
-- `dist/model.js`: 계산 및 CSV 내보내기
-- `tests/`: 재실행 가능한 테스트와 로컬 접근성 감사 도구
-- `docs/QA.md`: 확인한 항목과 한계
-- `artifacts/`: 로컬 검증 이미지와 배포 산출물. Git에서 제외됨.
+- `src/pages/`: 정적 경로와 페이지
+- `src/components/`, `src/layouts/`, `src/styles/`: 공통 디자인·접근성 구조
+- `src/data/`: 미리보기·연결·검색·주소 데이터
+- `src/lib/model.ts`: 계산·단위·CSV
+- `src/scripts/`: 필요한 페이지의 인터랙션, Lab 지연 로드
+- `public/`, `src/assets/`: 로컬 아이콘·폰트·라이선스
+- `tests/`, `scripts/`: 회귀 검사·산출물 감사·실행 도우미
+- `docs/foundation/`: 역사적 P0 기준선과 미결정 기록
+- `docs/architecture/`: P1 결정·검사·배포·복구 기록
+- `artifacts/`, `.sites-local/`: Git 제외 로컬 검증 자료
 
-폰트는 로컬 WOFF2로 제공하며 SIL Open Font License를 포함합니다. 이미지·외부 UI 라이브러리·분석 스크립트·외부 폰트 요청은 없습니다. 접근성 인증과 실사용 Core Web Vitals를 달성했다는 주장은 하지 않습니다.
+폰트는 로컬 WOFF2와 SIL Open Font License를 포함합니다. 제품에 외부 폰트·분석 스크립트·서버 저장·비밀 키는 없습니다. 폭 조절 검사를 실제 휴대폰 검사, 자동 검사 결과를 접근성 인증, 번들 크기를 실사용 Core Web Vitals 달성으로 표현하지 않습니다.

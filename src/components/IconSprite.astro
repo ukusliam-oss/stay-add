@@ -1,0 +1,6 @@
+---
+import {iconPaths} from '../lib/icons.ts';
+---
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+  {Object.entries(iconPaths).map(([name,path])=><symbol id={`icon-${name}`} viewBox="0 0 24 24"><path d={path} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>)}
+</svg>

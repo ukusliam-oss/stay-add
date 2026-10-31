@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageMasthead from '../../components/PageMasthead.astro';
+import ConnectionExplorer from '../../components/ConnectionExplorer.astro';
+import DraftNotice from '../../components/DraftNotice.astro';
+import {connectionMeta} from '../../data/subjects.ts';
+import type {ConnectionId} from '../../data/types.ts';
+export function getStaticPaths(){return (Object.keys(connectionMeta) as ConnectionId[]).map(id=>({params:{connection:connectionMeta[id].slug},props:{id}}));}
+const {id}=Astro.props as {id:ConnectionId};
+const item=connectionMeta[id];
+---
+<SiteLayout title={item.title} path={`/connect/${item.slug}`} active="connect"><PageMasthead title={item.title} eyebrow="03 / CONNECT · FOUR PERSPECTIVES" description={item.summary} crumbs={[{label:'Connect',path:'/connect'}]}/><section class="section-pad route-content connection-page"><DraftNotice compact label="CURATED CONNECTION"/><ConnectionExplorer connection={id}/></section></SiteLayout>

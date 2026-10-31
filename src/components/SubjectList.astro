@@ -1,0 +1,15 @@
+---
+import {subjects} from '../data/content.ts';
+import {subjectIds,subjectMeta,subjectPath} from '../data/subjects.ts';
+import {href} from '../lib/paths.ts';
+import Icon from './Icon.astro';
+import SubjectArt from './SubjectArt.astro';
+---
+<div class="subject-list">
+  {subjectIds.map(id=><a class:list={['subject-row',id]} href={href(subjectPath(id))} aria-label={`Explore ${subjects[id].name}`}>
+    <span class="subject-no mono">{subjects[id].number} /</span>
+    <span class="subject-name"><span class="mono subject-category">{subjectMeta[id].category.toUpperCase()}</span><strong>{id==='mathematics'?<>Additional<br class="math-break"/> Mathematics</>:subjects[id].name}</strong></span>
+    <SubjectArt subject={id}/>
+    <span class="subject-entry mono">EXPLORE PREVIEW <span class="round-arrow" aria-hidden="true"><Icon name="arrow-up-right"/></span></span>
+  </a>)}
+</div>
