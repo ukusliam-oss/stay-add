@@ -6,6 +6,8 @@
 
 공개 저장소: [github.com/ukusliam-oss/stay-add](https://github.com/ukusliam-oss/stay-add)
 
+제품 명세를 실현하기 위한 범위·선행 조건·단계별 통과 기준은 [단계별 실행 계획](docs/IMPLEMENTATION-PLAN.md)에 정리했습니다.
+
 ## GitHub Pages 배포
 
 `main`에 푸시하면 GitHub Actions가 Node.js 24에서 `npm ci --ignore-scripts`와 `npm run check`를 실행한 뒤 `dist/`만 GitHub Pages에 배포합니다. 수동 배포는 저장소 Actions의 `Verify and deploy GitHub Pages`에서 실행할 수 있습니다. 별도 배포 토큰이나 외부 서비스 키가 필요하지 않습니다.
@@ -16,7 +18,7 @@ GitHub Pages 설정의 배포 소스는 **GitHub Actions**입니다. 모든 앱 
 
 Node.js 20 이상에서 `npm run dev`를 실행하고 표시되는 로컬 주소를 엽니다. 기본 주소는 `http://127.0.0.1:4173`입니다. 배포할 때는 `dist/`를 정적 사이트로 제공하면 됩니다. 제품 실행에는 패키지 설치나 빌드 단계가 필요하지 않습니다.
 
-`npm run check`는 JavaScript 구문과 9개 모델·콘텐츠·대비 테스트를 검사합니다. `npm test`는 테스트만 실행합니다.
+`npm run check`는 JavaScript 구문과 모델·콘텐츠·대비·SVG 아이콘 회귀 테스트 11개를 검사합니다. `npm test`는 테스트만 실행합니다.
 
 접근성 자동 검사를 재현하려면 `npm ci` 후 개발 서버의 `/__qa`를 열고 검사 버튼을 누르세요. 이 경로와 axe-core는 개발 서버에만 있고 `dist/`에 포함되지 않습니다.
 
