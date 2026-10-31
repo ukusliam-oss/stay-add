@@ -1,0 +1,19 @@
+{
+  "name": "stay-add",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "STAY ADD. — An independent interactive science laboratory prototype",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check dist/app.js && node --check dist/model.js && node --check dist/content.js && node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0"
+  }
+}
